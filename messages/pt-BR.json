@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "title": "Calculadora Científica de TMB & Gasto Energético",
+    "description": "Cálculo fundamentado da Taxa Metabólica Basal e TDEE via Mifflin-St Jeor e Katch-McArdle."
+  },
+  "calculator": {
+    "header": {
+      "title": "Calculadora de TMB & TDEE",
+      "subtitle": "Estimativas de gasto energético baseadas em modelos validados pela literatura científica."
+    },
+    "methods": {
+      "label": "Método de Cálculo",
+      "mifflin": {
+        "title": "Mifflin-St Jeor (1990)",
+        "badge": "Padrão Clínico",
+        "description": "Indicado quando o percentual de gordura é desconhecido. Recomendado pela Academy of Nutrition and Dietetics para população geral."
+      },
+      "katch": {
+        "title": "Katch-McArdle (1996)",
+        "badge": "Composição Corporal",
+        "description": "Calcula a TMB a partir da Massa Livre de Gordura (FFM). Mais preciso para atletas e praticantes regulares de musculação/CrossFit com BF% conhecido."
+      }
+    },
+    "fields": {
+      "sex": {
+        "label": "Sexo Biológico",
+        "male": "Masculino",
+        "female": "Feminino"
+      },
+      "age": {
+        "label": "Idade",
+        "unit": "anos",
+        "placeholder": "Ex: 30"
+      },
+      "weight": {
+        "label": "Peso Corporal",
+        "unit": "kg",
+        "placeholder": "Ex: 80.5"
+      },
+      "height": {
+        "label": "Altura",
+        "unit": "cm",
+        "placeholder": "Ex: 178"
+      },
+      "bodyFat": {
+        "label": "Percentual de Gordura (BF)",
+        "unit": "%",
+        "placeholder": "Ex: 15.0",
+        "hint": "Obtido via bioimpedância elétrica, adipômetro ou DEXA."
+      },
+      "activityLevel": {
+        "label": "Nível de Atividade Física (Fator PAL)",
+        "options": {
+          "sedentary": {
+            "label": "Sedentário (1.20)",
+            "description": "Trabalho sentado em escritório, deslocamento passivo, pouco ou nenhum exercício planejado."
+          },
+          "light": {
+            "label": "Levemente Ativo (1.375)",
+            "description": "Trabalho sedentário com treino leve/moderado de 1 a 3 dias por semana ou rotina diária com caminhadas."
+          },
+          "moderate": {
+            "label": "Moderadamente Ativo (1.55)",
+            "description": "Treino com pesos, CrossFit ou esportes de intensidade moderada/alta 3 a 5 dias por semana."
+          },
+          "very_active": {
+            "label": "Altamente Ativo (1.725)",
+            "description": "Treinos intensos 6 a 7 dias por semana ou rotina de trabalho físico combinada a treino regular."
+          },
+          "extra_active": {
+            "label": "Extremamente Ativo (1.90)",
+            "description": "Atletas competitivos, rotina de treino diário duplo ou trabalho braçal pesado contínuo."
+          }
+        }
+      }
+    },
+    "results": {
+      "title": "Resultados Metabólicos",
+      "bmr": {
+        "label": "Taxa Metabólica Basal (TMB)",
+        "description": "Gasto calórico em repouso absoluto para manutenção das funções vitais."
+      },
+      "tdee": {
+        "label": "Gasto Energético Diário (TDEE)",
+        "description": "Calorias estimadas para manutenção do peso considerando sua rotina atual."
+      },
+      "leanMass": {
+        "label": "Massa Livre de Gordura (FFM)",
+        "unit": "kg"
+      },
+      "confidenceInterval": {
+        "label": "Faixa de Incerteza Fisiológica (±10%)",
+        "tooltip": "Modelos preditivos populacionais carregam variabilidade intrínseca de eficiência mitocondrial, efeito térmico alimentar (TEF) e NEAT."
+      },
+      "macroPreview": {
+        "deficit": "Déficit Calórico (-20%)",
+        "surplus": "Superávit Calórico (+10%)",
+        "maintenance": "Manutenção"
+      }
+    },
+    "nutrition": {
+      "title": "Metas Calóricas & Macronutrientes",
+      "goalLabel": "Objetivo Corporal",
+      "goals": {
+        "deficit_aggressive": "Déficit Agressivo (-25%)",
+        "deficit_moderate": "Déficit Moderado (-20%)",
+        "maintenance": "Manutenção (0%)",
+        "surplus_moderate": "Superávit Limpo (+10%)",
+        "surplus_aggressive": "Superávit Agressivo (+15%)"
+      },
+      "targetCalories": "Meta Calórica Diária",
+      "macros": {
+        "protein": "Proteínas",
+        "carbs": "Carboidratos",
+        "fat": "Gorduras",
+        "unitGrams": "g",
+        "unitKcal": "kcal"
+      }
+    },
+    "scientificNotes": {
+      "title": "Nota Metodológica",
+      "content": "Modelos matemáticos são estimativas populacionais. A calorimetria indireta permanece como padrão-ouro para medição clínica de TMB."
+    }
+  },
+  "validation": {
+    "weight": {
+      "min": "O peso deve ser de no mínimo 20 kg.",
+      "max": "O peso deve ser de no máximo 350 kg.",
+      "required": "Informe o peso corporal."
+    },
+    "height": {
+      "min": "A altura deve ser de no mínimo 50 cm.",
+      "max": "A altura deve ser de no máximo 260 cm.",
+      "required": "Informe a altura."
+    },
+    "age": {
+      "min": "A idade mínima é de 10 anos.",
+      "max": "A idade máxima é de 120 anos.",
+      "required": "Informe a idade."
+    },
+    "bodyFat": {
+      "min": "O percentual de gordura mínimo fisiológico é 3%.",
+      "max": "O percentual de gordura máximo suportado é 60%.",
+      "required": "Informe o percentual de gordura corporal."
+    },
+    "sex": {
+      "required": "Selecione o sexo biológico."
+    },
+    "activityLevel": {
+      "required": "Selecione o nível de atividade física."
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "title": "Scientific BMR & Energy Expenditure Calculator",
+    "description": "Evidence-based calculation of Basal Metabolic Rate and TDEE using Mifflin-St Jeor and Katch-McArdle models."
+  },
+  "calculator": {
+    "header": {
+      "title": "BMR & TDEE Calculator",
+      "subtitle": "Energy expenditure estimates grounded in peer-reviewed physiological literature."
+    },
+    "methods": {
+      "label": "Calculation Method",
+      "mifflin": {
+        "title": "Mifflin-St Jeor (1990)",
+        "badge": "Clinical Standard",
+        "description": "Recommended by the Academy of Nutrition and Dietetics for the general population when body fat is unknown."
+      },
+      "katch": {
+        "title": "Katch-McArdle (1996)",
+        "badge": "Body Composition",
+        "description": "Estimates BMR based on Fat-Free Mass (FFM). Superior accuracy for athletes and resistance-trained individuals with known body fat percentage."
+      }
+    },
+    "fields": {
+      "sex": {
+        "label": "Biological Sex",
+        "male": "Male",
+        "female": "Female"
+      },
+      "age": {
+        "label": "Age",
+        "unit": "years",
+        "placeholder": "E.g., 30"
+      },
+      "weight": {
+        "label": "Body Weight",
+        "unit": "kg",
+        "placeholder": "E.g., 80.5"
+      },
+      "height": {
+        "label": "Height",
+        "unit": "cm",
+        "placeholder": "E.g., 178"
+      },
+      "bodyFat": {
+        "label": "Body Fat (BF)",
+        "unit": "%",
+        "placeholder": "E.g., 15.0",
+        "hint": "Obtained via bioimpedance analysis, calipers, or DXA scan."
+      },
+      "activityLevel": {
+        "label": "Physical Activity Level (PAL Factor)",
+        "options": {
+          "sedentary": {
+            "label": "Sedentary (1.20)",
+            "description": "Desk job, passive commuting, little to no planned exercise."
+          },
+          "light": {
+            "label": "Lightly Active (1.375)",
+            "description": "Desk job paired with light/moderate workouts 1 to 3 days per week or active daily walking."
+          },
+          "moderate": {
+            "label": "Moderately Active (1.55)",
+            "description": "Resistance training, CrossFit, or moderate-to-high intensity sports 3 to 5 days per week."
+          },
+          "very_active": {
+            "label": "Very Active (1.725)",
+            "description": "Intense training 6 to 7 days per week, or a physically demanding job with routine exercise."
+          },
+          "extra_active": {
+            "label": "Extremamente Active (1.90)",
+            "description": "Competitive athletes, two-a-day training regimens, or heavy physical labor."
+          }
+        }
+      }
+    },
+    "results": {
+      "title": "Metabolic Metrics",
+      "bmr": {
+        "label": "Basal Metabolic Rate (BMR)",
+        "description": "Calories required to sustain vital physiological organs at absolute resting state."
+      },
+      "tdee": {
+        "label": "Total Daily Energy Expenditure (TDEE)",
+        "description": "Estimated calories required to maintain body weight at your current activity level."
+      },
+      "leanMass": {
+        "label": "Fat-Free Mass (FFM)",
+        "unit": "kg"
+      },
+      "confidenceInterval": {
+        "label": "Physiological Uncertainty Interval (±10%)",
+        "tooltip": "Population formulas carry inherent variability due to mitochondrial efficiency, TEF, and spontaneous NEAT."
+      },
+      "macroPreview": {
+        "deficit": "Caloric Deficit (-20%)",
+        "surplus": "Caloric Surplus (+10%)",
+        "maintenance": "Maintenance"
+      }
+    },
+    "nutrition": {
+      "title": "Caloric Targets & Macronutrients",
+      "goalLabel": "Body Composition Goal",
+      "goals": {
+        "deficit_aggressive": "Aggressive Deficit (-25%)",
+        "deficit_moderate": "Moderate Deficit (-20%)",
+        "maintenance": "Maintenance (0%)",
+        "surplus_moderate": "Lean Surplus (+10%)",
+        "surplus_aggressive": "Aggressive Surplus (+15%)"
+      },
+      "targetCalories": "Daily Caloric Target",
+      "macros": {
+        "protein": "Protein",
+        "carbs": "Carbohydrates",
+        "fat": "Fats",
+        "unitGrams": "g",
+        "unitKcal": "kcal"
+      }
+    },
+    "scientificNotes": {
+      "title": "Methodological Note",
+      "content": "Predictive equations represent population statistical models. Indirect calorimetry remains the gold standard for clinical measurement."
+    }
+  },
+  "validation": {
+    "weight": {
+      "min": "Weight must be at least 20 kg.",
+      "max": "Weight must not exceed 350 kg.",
+      "required": "Body weight is required."
+    },
+    "height": {
+      "min": "Height must be at least 50 cm.",
+      "max": "Height must not exceed 260 cm.",
+      "required": "Height is required."
+    },
+    "age": {
+      "min": "Minimum age is 10 years.",
+      "max": "Maximum age is 120 years.",
+      "required": "Age is required."
+    },
+    "bodyFat": {
+      "min": "Minimum physiological body fat is 3%.",
+      "max": "Maximum supported body fat is 60%.",
+      "required": "Body fat percentage is required."
+    },
+    "sex": {
+      "required": "Please select biological sex."
+    },
+    "activityLevel": {
+      "required": "Please select an activity level."
+    }
+  }
+}
